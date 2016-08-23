@@ -1,0 +1,7 @@
+08) C использованием Active Record из таблиц cars и details (car имеет много details) нужно выбрать все машины у которых > 5 деталей *
+
+class Car
+  scope :details_min_limin, -> (n) { includes(:details).select{ |c| c.details.count > n } }
+end
+
+Car.details_min_limin(5)

@@ -1,0 +1,3 @@
+03) Отличия Active Record колбэков before_save и before_create *
+
+before_create сработает только перед оперцией create, а before_save срабатывает перед операциями create и update

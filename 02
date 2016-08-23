@@ -1,0 +1,12 @@
+02) Ruby: Написать функцию, вычисляющую произведение всех четных чисел массива. *
+
+class Compositions
+  def of_numbers(*array)
+    c = 1
+    array.select(&:even?).map { |b| c *= b }
+    c
+  end
+end
+
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+p Compositions.new.of_numbers(*array)

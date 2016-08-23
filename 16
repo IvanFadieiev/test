@@ -1,0 +1,23 @@
+16) JS: Возможна ли реализация уровней public/private в js-классе, пример *
+
+Да, возможна
+public - модификатор доступа, обозначающий, что элемент класса доступен внутри класса, а так же к элементу можно обратиться из других мест программы
+private - модификатор доступа, обозначающий, что элемент класса доступен только внутри класса
+private example:
+function Animal(name, walkSpeed) {
+    var speed = walkSpeed;
+    this.distance = 0;
+    this.walk = function(time) {
+        this.distance = this.distance + time*speed;
+    }
+}
+
+protected example:
+function Animal(name) {
+    var privateVariable = 0
+    this._protectedName = name
+    this._protectedMethod = function(..) {
+        alert(privateVariable)
+    }
+    this.publicMethod = function() { ... }
+}

@@ -1,0 +1,6 @@
+05) Что такое Active Record scopes? *
+
+Scopes - именованые условия-фильтры для поиска!
+class Post < ActiveRecord::Base
+  scope :published, -> { where(:published => true) }
+end

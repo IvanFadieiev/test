@@ -1,0 +1,15 @@
+04) Что такое полиморфные связи в Rails? Пример.
+
+Полиморфные связи — это динамические связи между таблицами( наследники классов могут изменять унаследованное поведение с сохранением общей структуры ).
+Самый простой пример - это связь Comment, Article, Video( модель Comment пренадлежит более чем одной модели )
+class Comment < ActiveRecord::Base
+  belongs_to :commentable, polymorphic: true
+end
+
+class Article < ActiveRecord::Base
+  has_many :comments, as: :commentable
+end
+
+class Video < ActiveRecord::Base
+  has_many :comments, as: :commentable
+end
